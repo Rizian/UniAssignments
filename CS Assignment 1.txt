@@ -1,0 +1,41 @@
+CS Assignment 1
+
+1. c; because (7+23) isn't a string it will first run the addition operator and then return the value which is 30.
+2. only a and c; Variable names may start with an underscore but not numbers, hyphens aren't allowed and both ! and . are operators and will mess up syntax.
+3. a, c, d and g
+4. c; because they are sequential and not simultaneous operations, x gets overwritten by the value of y changing it to 10 before y gets overwritten by x (which has been changed to 10) and thus y remains as 10 as well.
+5. True
+6. True
+7. c; python follows the mathematical order of operations meaning that 6%7 goes first which results in 6 which then gets added to 5, getting 11 as the result.
+8. b
+9. b
+10. 0.0
+11. 0.5
+12. 3
+13. 7
+14. 7
+15. 2
+16. 8
+17. b = 2, c = 2.0, d = 1, e = 1.0, f = 2.5, g = 1.5
+18. b
+19. a
+20. d; this produces an error because you can't do divide operators on a str
+21. b
+22. False
+23. True
+24. False
+25. True
+26. False
+27. False
+28. x = 3, y = 1
+29. d; The answer is an int because there were no floats in the operation and the result is a whole number
+30. a; because the floor division only returns whole numbers
+
+Additional Questions (cuz why not)
+1. True
+2. d
+3. c
+4. d
+5. d
+6. b
+7. a
