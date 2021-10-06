@@ -5,7 +5,7 @@ CS Assignment 1
 3. a, c, d and g
 4. c; because they are sequential and not simultaneous operations, x gets overwritten by the value of y changing it to 10 before y gets overwritten by x (which has been changed to 10) and thus y remains as 10 as well.
 5. True
-6. True
+6. False
 7. c; python follows the mathematical order of operations meaning that 6%7 goes first which results in 6 which then gets added to 5, getting 11 as the result.
 8. b
 9. b
@@ -14,8 +14,8 @@ CS Assignment 1
 12. 3
 13. 7
 14. 7
-15. 2
-16. 8
+15. 2.0
+16. 8.0
 17. b = 2, c = 2.0, d = 1, e = 1.0, f = 2.5, g = 1.5
 18. b
 19. a
@@ -37,5 +37,5 @@ Additional Questions (cuz why not)
 3. c
 4. d
 5. d
-6. b
-7. a
+6. a
+7. d
