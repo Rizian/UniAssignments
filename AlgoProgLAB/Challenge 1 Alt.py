@@ -1,15 +1,20 @@
 '''
-Challenge 1
+Challenge 1 Alternative Solution
 '''
+list1 = []
+
 x = int(input("Enter a number: "))
 
 if x % 11 == 0:
-    print("a", end="")
+    list1.append("a")
 if x % 9 == 0:
-    print("b", end="")
+    list1.append("b")
 if x % 7 == 0:
-    print("c", end="")
+    list1.append("c")
 if x % 2 == 0:
-    print("d", end="")
+    list1.append("d")
 if (x % 11 != 0 and x % 11 != 0 and x % 9 != 0 and x % 7 != 0 and x % 2 != 0):
-    print("e", end="")
+    list1.append("e")
+
+n = ''.join(list1)
+print(n)
