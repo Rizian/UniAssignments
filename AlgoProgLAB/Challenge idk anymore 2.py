@@ -1,19 +1,29 @@
 '''
-Addition by specific base-value for value <=10
+Converts an int value to a different counting base
 '''
-def base_add(k = 10, x = int, *args):
+
+def base_convert(base = 10, sum = int):
     convert = []
-    sum = x
-    for y in args:
-        sum += y
     while True:
-        if sum >= k:
-            i = sum % k
+        if sum >= base:
+            i = sum % base
+            sum //= base
+            if i >= 10:
+                i = chr(55+i)
             convert.append(str(i))
-            sum //= k
             continue
         break
+    if sum >= 10:
+        sum = chr(55+sum)
     convert.append(str(sum))
     convert.reverse()
-    z = ''.join(convert)
-    print(z)
+    out = ''.join(convert)
+    return out
+
+base = int(input("Enter a base value:\n>> "))
+num = int(eval(input("Enter a number here:\n(simple math calculations allowed (+,-,*,**,/,//))\n>> ")))
+
+converted_num = base_convert(base, num)
+
+print(f"base 10: {num}")
+print(f"base {base}: {converted_num}")

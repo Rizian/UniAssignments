@@ -1,0 +1,9 @@
+1. b
+2. d
+3. a
+4. b
+5. d, indentation error
+6. c
+7. a
+8. c
+9. b
