@@ -4,28 +4,30 @@ import pandas as pd
 import datetime
 import pygal
 
-filename = 'activity.csv'
+filename = "activity.csv"
 with open(filename) as f:
     reader = csv.reader(f)
     headerRow = next(reader)
     
-    wr = open('newActivity.csv','w')
-    wr.write(str(headerRow[0])+","+str(headerRow[1])+","+str(headerRow[2])+",day")
-    wr.write("\n")
+    newfile = open('newActivity.csv','w')
+    newfile.write(str(headerRow[0])+","+str(headerRow[1])+","+str(headerRow[2])+",day")
+    newfile.write("\n")
     
-    n=0
+    n = 0
     for row in reader:
+        # changes the missing data for number of steps to value of '0'
         if (row[0] == 'NA'):
             row[0] = 0
             n+=1
+        # creates a new "day of the week" column based on the date
         if pd.to_datetime(row[1]).weekday() >= 5:
             day = "Weekend"
         else:
             day = "Weekday"
-        wr.write(str(row[0])+","+str(row[1])+","+str(row[2])+","+str(day))
-        wr.write("\n")
+        newfile.write(str(row[0])+","+str(row[1])+","+str(row[2])+","+str(day))
+        newfile.write("\n")
         
-    wr.close()
+    newfile.close()
     print("The total number of missing values in the dataset is:", n)
     
 filename = "newActivity.csv"
@@ -37,6 +39,7 @@ with open(filename) as f:
     dictInterval = {}
     dictIntervalWeekday = {}
     dictIntervalWeekend = {}
+
     for row in reader:
         steps = row[0]   
         date = row[1]
@@ -65,15 +68,16 @@ with open(filename) as f:
         listDate.append(i)
         listTotal.append(sum(dictDate.get(i)))
 
-    print("Mean :", round(st.mean(listTotal), 2))
     med = sorted(listTotal)
+    print("Mean :", round(st.mean(listTotal), 2))
     print("Median :", st.median(med))
 
+    # creates the histogram
     hist = pygal.Bar()
-    hist.title = "Total steps taken per day"
+    hist.title = "Total Steps Taken per Day"
     hist.x_title = "Steps per day"
     hist.x_labels = listDate
-    hist.add("Total number of steps", listTotal)
+    hist.add("Total Number of Steps", listTotal)
     hist.render_to_file('ActivityChart.svg')
 
     listInterval = []
@@ -100,6 +104,7 @@ with open(filename) as f:
     print("Max :", max(listAverageSteps))
     print("Most Active Interval :", listInterval[listAverageSteps.index(max(listAverageSteps))])
 
+    # creates the line graph
     line = pygal.Line()
     line.title = "Average Steps per Interval"
     line.x_title = "Time of Day / Minutes (in 5-min intervals)"
