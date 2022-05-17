@@ -1,16 +1,16 @@
 package bankingsystem;
 import java.util.Scanner;
-import java.lang.Math;
 
 public class Customer {
     private final String firstName;
     private final String lastName;
-    private final long ID = (long) Math.random();
+    private final long ID;
     private Account account = null;
     
-    public Customer(String fname, String lname) {
+    public Customer(String fname, String lname, int IDindex) {
         this.firstName = fname;
-        this.lastName = lname; 
+        this.lastName = lname;
+        this.ID = 100001 + IDindex;
     }
     
     public String getFirstName() {
@@ -20,6 +20,7 @@ public class Customer {
     public String getLastName() {
         return this.lastName;
     }
+    
     
     public long getID() {
         return this.ID;
